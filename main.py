@@ -1,12 +1,11 @@
 import re
-import time
 import json
 from collections import defaultdict
 from datetime import datetime
 import requests
 
 def parse_log_line(line):
-    """Extracts timestamp, username, IP, and status from a log line."""
+    #Extracts timestamp, username, IP, and status from a log line.
     pattern = r'(?P<timestamp>\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) - (?P<username>\S+) - (?P<ip>\d+\.\d+\.\d+\.\d+) - (?P<status>\S+)'
     match = re.match(pattern, line)
     if match:
@@ -14,7 +13,7 @@ def parse_log_line(line):
     return None
 
 def get_ip_location(ip):
-    """Fetches geolocation of an IP address using a free API."""
+    #Fetches geolocation of an IP address using a free API.
     try:
         response = requests.get(f"http://ip-api.com/json/{ip}")
         data = response.json()
@@ -23,7 +22,7 @@ def get_ip_location(ip):
         return "Unknown Location"
 
 def detect_suspicious_activity(log_lines):
-    """Detects multiple failed attempts, geo-location changes, and rate-limiting issues."""
+    #Detects multiple failed attempts, geo-location changes, and rate-limiting issues.
     failed_attempts = defaultdict(list)
     last_login_location = {}
     login_attempts = defaultdict(list)
@@ -37,6 +36,8 @@ def detect_suspicious_activity(log_lines):
         timestamp, username, ip, status = log_data['timestamp'], log_data['username'], log_data['ip'], log_data['status']
         time_obj = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S")
 
+        location = "Unknown Location"  # Ensure location is always initialized
+
         # Track failed login attempts
         if status == "FAILED":
             failed_attempts[username].append(time_obj)
@@ -46,7 +47,6 @@ def detect_suspicious_activity(log_lines):
                 alerts.append(alert_msg)
         else:
             failed_attempts[username] = []  # Reset on successful login
-
             location = get_ip_location(ip)
             if username in last_login_location and last_login_location[username] != ip:
                 alert_msg = f"[ALERT] {username} logged in from a different IP: {ip} ({location})"
