@@ -45,7 +45,6 @@ Alerts saved to alerts.log
 [ALERT] Multiple failed login attempts for user hacker
 [ALERT] Possible brute-force attack from 192.168.2.5 (Unknown Location)
 ______________________________________________________________________________________________________________________________________________________________________________
-
 Summarised Explanation:
 - User "user1" had multiple failed login attempts → Possible attack.
 - User "user1" logged in successfully but from a different IP (10.0.1.2) → Possible account compromise.
