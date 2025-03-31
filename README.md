@@ -19,16 +19,16 @@ Example of deployment of program:
 1. Input Following Logs when prompted:
 (example case as shown below:)
 
-2025-03-30 13:00:00 - user1 - 10.0.0.1 - FAILED
-2025-03-30 13:00:05 - user1 - 10.0.0.1 - FAILED
-2025-03-30 13:00:10 - user1 - 10.0.0.1 - FAILED
-2025-03-30 13:00:15 - user1 - 10.0.0.1 - SUCCESS
-2025-03-30 13:00:20 - user1 - 10.0.1.2 - SUCCESS
-2025-03-30 13:00:25 - hacker - 192.168.2.5 - FAILED
-2025-03-30 13:00:27 - hacker - 192.168.2.5 - FAILED
-2025-03-30 13:00:29 - hacker - 192.168.2.5 - FAILED
-2025-03-30 13:00:31 - hacker - 192.168.2.5 - FAILED
-2025-03-30 13:00:33 - hacker - 192.168.2.5 - FAILED
+2025-03-30 13:00:00 - user1 - 10.0.0.1 - FAILED‎ 
+2025-03-30 13:00:05 - user1 - 10.0.0.1 - FAILED‎ 
+2025-03-30 13:00:10 - user1 - 10.0.0.1 - FAILED‎ 
+2025-03-30 13:00:15 - user1 - 10.0.0.1 - SUCCESS‎ 
+2025-03-30 13:00:20 - user1 - 10.0.1.2 - SUCCESS‎ 
+2025-03-30 13:00:25 - hacker - 192.168.2.5 - FAILED‎ 
+2025-03-30 13:00:27 - hacker - 192.168.2.5 - FAILED‎ 
+2025-03-30 13:00:29 - hacker - 192.168.2.5 - FAILED‎ 
+2025-03-30 13:00:31 - hacker - 192.168.2.5 - FAILED‎ 
+2025-03-30 13:00:33 - hacker - 192.168.2.5 - FAILED‎ 
 
 
 3. Output as shown:
