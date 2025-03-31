@@ -18,6 +18,7 @@ Example of deployment of program:
 
 1. Input Following Logs when prompted:
 (example case as shown below:)
+
 2025-03-30 13:00:00 - user1 - 10.0.0.1 - FAILED
 2025-03-30 13:00:05 - user1 - 10.0.0.1 - FAILED
 2025-03-30 13:00:10 - user1 - 10.0.0.1 - FAILED
@@ -29,8 +30,10 @@ Example of deployment of program:
 2025-03-30 13:00:31 - hacker - 192.168.2.5 - FAILED
 2025-03-30 13:00:33 - hacker - 192.168.2.5 - FAILED
 
+
 3. Output as shown:
 Analyzing logs...
+
 
 [ALERT] Multiple failed login attempts for user user1
 [ALERT] user1 logged in from a different IP: 10.0.1.2 (Unknown Location)
@@ -39,11 +42,14 @@ Analyzing logs...
 
 Alerts saved to alerts.log
 
+
 3. In alerts.log file:
+   
 [ALERT] Multiple failed login attempts for user user1
 [ALERT] user1 logged in from a different IP: 10.0.1.2 (Unknown Location)
 [ALERT] Multiple failed login attempts for user hacker
 [ALERT] Possible brute-force attack from 192.168.2.5 (Unknown Location)
+
 ______________________________________________________________________________________________________________________________________________________________________________
 Summarised Explanation:
 - User "user1" had multiple failed login attempts → Possible attack.
